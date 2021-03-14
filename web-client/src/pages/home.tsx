@@ -1,12 +1,13 @@
 import React from 'react'
-import { Text } from "@chakra-ui/react"
+import { NavBar } from '../components/navbar/NavBar';
 
 interface homeProps {
-
 }
 
-export const home: React.FC<homeProps> = ({ }) => {
+const Home: React.FC<homeProps> = ({ }) => {
     return (
-        <Text>HomePage</Text>
+        <NavBar />
     );
 }
+
+export default Home;
