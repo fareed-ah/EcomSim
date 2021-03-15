@@ -1,7 +1,7 @@
 import { VStack, Heading, Button, Text, HStack, Box, SimpleGrid } from '@chakra-ui/react';
 import React from 'react'
 import { NavBar } from '../../components/navbar/NavBar';
-import { PlatformInfoCard } from '../../components/platform/platformInfoCard';
+import { PlatformInfoCard } from '../../components/platform/PlatformInfoCard';
 
 interface platformsProps {
 
