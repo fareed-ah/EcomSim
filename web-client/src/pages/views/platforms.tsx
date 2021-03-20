@@ -1,4 +1,5 @@
 import { VStack, Heading, Button, Text, HStack, Box, SimpleGrid } from '@chakra-ui/react';
+import { useRouter } from 'next/router';
 import React from 'react'
 import { NavBar } from '../../components/navbar/NavBar';
 import { PlatformInfoCard } from '../../components/platform/PlatformInfoCard';
@@ -8,6 +9,9 @@ interface platformsProps {
 }
 
 const platforms: React.FC<platformsProps> = ({ }) => {
+
+    const router = useRouter()
+
     return (
         <div>
             <NavBar />
@@ -31,7 +35,7 @@ const platforms: React.FC<platformsProps> = ({ }) => {
 
                 </SimpleGrid>
 
-                <Button colorScheme="teal" size="md">Continue</Button>
+                <Button colorScheme="teal" size="md" onClick={() => router.push('/views/storeDetails')}>Continue</Button>
             </VStack>
         </div>
     );

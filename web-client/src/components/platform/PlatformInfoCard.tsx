@@ -1,11 +1,8 @@
 import {
     Box,
-    Stack,
     HStack,
-    Heading,
     Text,
     VStack,
-    useColorModeValue,
     List,
     ListItem,
     ListIcon,
@@ -16,7 +13,6 @@ import React from 'react'
 import { PlatformWrapper } from './PlatformWrapper';
 
 interface PlatformInfoCardProps {
-
 }
 
 export const PlatformInfoCard: React.FC<PlatformInfoCardProps> = ({ }) => {
@@ -39,7 +35,7 @@ export const PlatformInfoCard: React.FC<PlatformInfoCardProps> = ({ }) => {
                 </HStack>
             </Box>
             <VStack
-                bg={useColorModeValue('gray.50', 'gray.700')}
+                bg='gray.50'
                 py={4}
                 borderBottomRadius={'xl'}>
                 <List spacing={3} textAlign="start" px={12}>
@@ -57,11 +53,11 @@ export const PlatformInfoCard: React.FC<PlatformInfoCardProps> = ({ }) => {
               </ListItem>
                 </List>
                 <Box w="80%" pt={7}>
-                    <Button w="full" colorScheme="red" variant="outline">
-                        Start trial
+                    <Button w="full" colorScheme="teal" variant="outline">
+                        Select
               </Button>
                 </Box>
             </VStack>
-       </PlatformWrapper>
+        </PlatformWrapper>
     );
 }
