@@ -1,7 +1,7 @@
-import { Box, Flex, HStack, Stack, VStack } from '@chakra-ui/react';
+
+import { Box, Container } from '@material-ui/core';
 import React from 'react'
 import { NavBar } from '../../components/navbar/NavBar';
-import { AddProductForm } from '../../components/products/AddProductForm';
 import { Marketing } from '../../components/storeDetails/Marketing';
 import { TargetAudience } from '../../components/storeDetails/TargetAudience';
 
@@ -13,16 +13,16 @@ export const products: React.FC<productsProps> = ({ }) => {
     return (
         <Box>
             <NavBar />
-            <Flex direction="row">
-                <Stack direction="column" width="30%">
-                    <AddProductForm />
-                </Stack>
+            <Container>
+                <Container>
 
-                <Stack direction="column" width="70%">
+                </Container>
+
+                <Container >
                     <Marketing />
                     <TargetAudience />
-                </Stack>
-            </Flex>
+                </Container>
+            </Container>
         </Box>
     );
 }

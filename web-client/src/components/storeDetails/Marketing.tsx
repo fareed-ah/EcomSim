@@ -1,3 +1,4 @@
+import { Box } from '@material-ui/core';
 import React from 'react'
 
 interface MarketingProps {
@@ -6,8 +7,8 @@ interface MarketingProps {
 
 export const Marketing: React.FC<MarketingProps> = ({}) => {
     return (
-        <div>
+        <Box>
             Marketing
-        </div>
-        );
+        </Box>
+    );
 }

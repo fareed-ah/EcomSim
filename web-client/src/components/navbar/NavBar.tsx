@@ -1,61 +1,42 @@
-import React from "react";
-import { Box, Heading, Flex, Text, Button } from "@chakra-ui/react";
-import { MenuItems } from "./MenuItems";
+import classes from '*.module.css';
+import { AppBar, Button, createStyles, IconButton, makeStyles, Theme, Toolbar, Typography } from '@material-ui/core';
+import React from 'react'
 
 interface NavBarProps {
 
 }
 
+const useStyles = makeStyles((theme: Theme) =>
+    createStyles({
+        root: {
+            flexGrow: 1,
+        },
+        menuButton: {
+            alignSelf: "flex-end",
+        },
+        title: {
+            flexGrow: 1,
+            font: "Roboto",
+            fontWeight: 'bold',
+        },
+        appbar: {
+           
+        },
+    }),
+);
+
 export const NavBar: React.FC<NavBarProps> = ({ }) => {
-  const [show, setShow] = React.useState(false);
-  const handleToggle = () => setShow(!show);
-
-  return (
-    <Flex
-      as="nav"
-      align="center"
-      justify="space-between"
-      wrap="wrap"
-      padding="1.5rem"
-      bg="teal.500"
-      color="white"
-    >
-      <Flex align="center" mr={5}>
-        <Heading as="h1" size="lg" letterSpacing={"-.1rem"}>
-          Ecom Sim
-        </Heading>
-      </Flex>
-
-      <Box display={{ base: "block", md: "none" }} onClick={handleToggle}>
-        <svg
-          fill="white"
-          width="12px"
-          viewBox="0 0 20 20"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <title>Menu</title>
-          <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
-        </svg>
-      </Box>
-
-      <Box
-        display={{ sm: show ? "block" : "none", md: "flex" }}
-        width={{ sm: "full", md: "auto" }}
-        alignItems="center"
-        flexGrow={1}
-      >
-        <MenuItems>About</MenuItems>
-        <MenuItems>Examples</MenuItems>
-      </Box>
-
-      <Box
-        display={{ sm: show ? "block" : "none", md: "block" }}
-        mt={{ base: 4, md: 0 }}
-      >
-        <Button bg="transparent" border="1px">
-          Create account
-        </Button>
-      </Box>
-    </Flex>
-  );
+    const classes = useStyles();
+    return (
+        <div className={classes.root}>
+            <AppBar position="static" color="inherit">
+                <Toolbar className={classes.appbar} color="inherit">
+                    <Typography variant="h6" className={classes.title}>
+                        ecomsim
+                     </Typography>
+                    <Button color="inherit" className={classes.menuButton}>Login</Button>
+                </Toolbar>
+            </AppBar>
+        </div>
+    );
 }

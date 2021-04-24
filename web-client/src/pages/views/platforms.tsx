@@ -1,8 +1,8 @@
-import { VStack, Heading, Button, Text, HStack, Box, SimpleGrid } from '@chakra-ui/react';
+
+import { Box, Button, Container, Grid, Typography } from '@material-ui/core';
 import { useRouter } from 'next/router';
 import React from 'react'
 import { NavBar } from '../../components/navbar/NavBar';
-import { PlatformInfoCard } from '../../components/platform/PlatformInfoCard';
 
 interface platformsProps {
 
@@ -13,31 +13,19 @@ const platforms: React.FC<platformsProps> = ({ }) => {
     const router = useRouter()
 
     return (
-        <div>
+        <Box>
             <NavBar />
-            <VStack
-                spacing={6}
-                align="center">
+            <Container>
 
-                <Heading fontSize="xl">Select the ecommerce platform you wish to use!</Heading>
+                <Typography>Select the ecommerce platform you wish to use!</Typography>
 
-                <SimpleGrid columns={3} spacing={4}>
+                <Grid>
 
-                    <PlatformInfoCard />
-                    <PlatformInfoCard />
-                    <PlatformInfoCard />
-                    <PlatformInfoCard />
-                    <PlatformInfoCard />
-                    <PlatformInfoCard />
-                    <PlatformInfoCard />
-                    <PlatformInfoCard />
-                    <PlatformInfoCard />
+                </Grid>
 
-                </SimpleGrid>
-
-                <Button colorScheme="teal" size="md" onClick={() => router.push('/views/storeDetails')}>Continue</Button>
-            </VStack>
-        </div>
+                <Button onClick={() => router.push('/views/storeDetails')}>Continue</Button>
+            </Container>
+        </Box>
     );
 }
 

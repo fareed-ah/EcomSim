@@ -1,3 +1,5 @@
+
+import { Box } from '@material-ui/core';
 import React from 'react'
 
 interface TargetAudienceProps {
@@ -6,8 +8,8 @@ interface TargetAudienceProps {
 
 export const TargetAudience: React.FC<TargetAudienceProps> = ({ }) => {
     return (
-        <div>
+        <Box>
             TargetAudience
-        </div>
+        </Box>
     );
 }
