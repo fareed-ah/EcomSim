@@ -1,20 +1,26 @@
 
-import { Box } from '@chakra-ui/react';
-import { Select } from '@material-ui/core';
+import { createStyles, Box, Select, Theme, Typography } from '@material-ui/core';
+import { makeStyles } from '@material-ui/styles';
 import React from 'react'
+import CheckboxList from '../checklist/CheckBoxList';
 
 interface DemographicsProps {
 
 }
+const useStyles = makeStyles((theme: Theme) =>
+    createStyles({
+        root: {
+            flexGrow: 1,
+        },
+    }),
+);
 
-export const Demographics: React.FC<DemographicsProps> = ({}) => {
+export const Demographics: React.FC<DemographicsProps> = ({ }) => {
+    const classes = useStyles();
     return (
         <Box>
-            <Select placeholder="Select your target demographic">
-                <option value="option1">Option 1</option>
-                <option value="option2">Option 2</option>
-                <option value="option3">Option 3</option>
-            </Select>
+            <Typography variant="h5">Demographics</Typography>
+            <CheckboxList />
         </Box>
     );
 }

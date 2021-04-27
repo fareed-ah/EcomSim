@@ -1,5 +1,6 @@
 
-import { Box, Container } from '@material-ui/core';
+import { Box, Container, createStyles, Theme } from '@material-ui/core';
+import { makeStyles } from '@material-ui/styles';
 import React from 'react'
 import { NavBar } from '../../components/navbar/NavBar';
 import { Marketing } from '../../components/storeDetails/Marketing';
@@ -9,7 +10,9 @@ interface productsProps {
 
 }
 
+
 export const products: React.FC<productsProps> = ({ }) => {
+   
     return (
         <Box>
             <NavBar />

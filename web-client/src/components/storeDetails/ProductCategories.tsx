@@ -1,19 +1,26 @@
 
-import { Box, Select } from '@material-ui/core';
+import { Box, createStyles, Select, Theme, Typography } from '@material-ui/core';
+import { makeStyles } from '@material-ui/styles';
 import React from 'react'
+import CheckboxList from '../checklist/CheckBoxList';
 
 interface ProductCategoriesProps {
 
 }
+const useStyles = makeStyles((theme: Theme) =>
+    createStyles({
+        root: {
+            flexGrow: 1,
+        },
 
+    }),
+);
 export const ProductCategories: React.FC<ProductCategoriesProps> = ({ }) => {
+    const classes = useStyles();
     return (
         <Box>
-            <Select placeholder="Select your product categories">
-                <option value="option1">Option 1</option>
-                <option value="option2">Option 2</option>
-                <option value="option3">Option 3</option>
-            </Select>
+            <Typography variant="h5">Product Categories</Typography>
+            <CheckboxList />
         </Box>
     );
 }
