@@ -19,18 +19,21 @@ const useStyles = makeStyles((theme: Theme) =>
         root: {
             flexGrow: 1,
         },
-        demographics: {
+
+        section1: {
             color: "#000",
             minHeight: "500px",
             padding: "50px",
-        },
-        section2: {
-            flexGrow: 1,
             flexDirection: "row",
-            minHeight: "500px",
-            padding: "50px",
-            paddingTop: "70px",
-            paddingBottom: "200px",
+            display: "flex",
+        },
+
+        heading5: {
+            font: "Roboto",
+            fontWeight: "bold",
+            alignSelf: "center",
+            textAlign: "center",
+            marginTop: 50,
         },
 
         button: {
@@ -56,9 +59,11 @@ export const storeDetails: React.FC<storeDetailsProps> = ({ }) => {
     return (
         <div className={classes.root}>
             <NavBar />
-            <Box className={classes.demographics}>
+            <Typography variant="h5" className={classes.heading5}>Customize your settings to model your store!</Typography>
+            <Box className={classes.section1}>
                 <Demographics />
                 <ProductCategories />
+                <Marketing />
             </Box>
             <Container>
                 <Button className={classes.button} onClick={() => router.push('/views/products')}>Continue</Button>
